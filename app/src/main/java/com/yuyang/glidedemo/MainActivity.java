@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Glide.with(this)
                 .load(R.mipmap.iv_01)
+                .placeholder(R.mipmap.iv_null)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imageView);
     }
 
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Glide.with(this)
                 .load(url)
                 .placeholder(R.mipmap.iv_null)//占位图
+                .error(R.mipmap.iv_01)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)//禁用Glide 的缓存功能
                 .into(imageView);
 

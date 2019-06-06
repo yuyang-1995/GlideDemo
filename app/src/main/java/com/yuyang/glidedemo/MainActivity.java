@@ -56,9 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String url = "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg";
         Glide.with(this)
+                .asBitmap()
                 .load(url)
-                .placeholder(R.mipmap.iv_null)//占位图
-                .error(R.mipmap.iv_01)
+                .placeholder(R.mipmap.iv_null)//空占位图
+                .error(R.mipmap.iv_01) //异常占位图
                 .diskCacheStrategy(DiskCacheStrategy.NONE)//禁用Glide 的缓存功能
                 .into(imageView);
 
